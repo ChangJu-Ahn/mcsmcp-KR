@@ -76,7 +76,7 @@ MCP 서버는 커넥터 인프라를 활용해 엔터프라이즈 보안 및 거
 이제는 선택할 수 있습니다! :) 서버를 로컬로 동작시키거나, Azure에 배포할 수 있습니다.
 다만, 두 가지 모두에 대해 몇 가지 단계를 거쳐야 합니다.
 
-1. 아래 명령어를 기반으로 현재 깃헙 리포지토리를 클론합니다. ( `{account}`를 사용자의 깃헙 계정 이름으로 변경): 
+1. 아래 명령어를 기반으로 현재 깃헙 리포지토리를 클론합니다. ( `{account}`를 사용자의 깃헙 계정 이름으로 변경)
 
 `git clone https://github.com/{account}/mcsmcp-kr.git`
 
@@ -94,16 +94,21 @@ MCP 서버는 커넥터 인프라를 활용해 엔터프라이즈 보안 및 거
 
 ### 🏃‍♀️ Run the MCP Server Locally
 
-1. Run `npm install`
-1. Run `npm run build && npm run start`
+1. 터미널 창에서 `npm install` 를 입력합니다.
+1. 그리고 `npm run build && npm run start` 를 입력합니다.
 
-    ![Terminal view after building and starting the server](./assets/vscode-terminal-run-start.png)
+    <img width="389" height="137" alt="image" src="https://github.com/user-attachments/assets/008424dd-9e43-4b68-9c19-39bc0c23938f" />
 
-1. Select `PORTS` at the top of the Visual Studio Code Terminal
 
-    ![Image of VS Code where the terminal is open and the PORTS tab is highlighted](./assets/vscode-terminal-ports.png)
+1.  터미널 옆에 탭 창에서 `PORTS` 버튼을 누릅니다.
 
-1. Select the green `Forward a Port` button
+    <img width="407" height="141" alt="image" src="https://github.com/user-attachments/assets/88614f7a-7e88-44a4-a93a-8eba2a420b17" />
+
+
+1. 초록색의 `Forward a Port` 버튼을 누릅니다.
+
+   <img width="421" height="101" alt="image" src="https://github.com/user-attachments/assets/a7cbfb0d-8217-4aa6-8a6d-c2ea730d12eb" />
+
 
     ![Image of VS Code where the PORTS tab is open and the green `Forward a Port` button is highlighted](./assets/vscode-terminal-ports-forward.png)
 

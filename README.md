@@ -200,29 +200,42 @@ Jokes MCP 서버를 사용하려면 서버의 URL(devtunnel URL이나 배포한 
 1. `HTTP (HTTP or Server-Sent Events)`를 선택합니다.
    <img width="726" height="217" alt="image" src="https://github.com/user-attachments/assets/4463cda3-86ef-41d8-86a4-4780a7717d3d" />
 
-1. Paste the URL of your server in the input box (make sure `/mcp` in the end is included)
-1. Press `Enter`
-1. Enter a name for the server, for instance `JokesMCP`
-1. Select `User Settings` to save the MCP Server settings in your user settings
+1. 현재 MCP Server가 동작하는 URL(= 컨테이너 앱스 URL) 주소를 입력합니다. 이때 반드시 URL 마지막에 `/mcp`가 포함되어야 합니다.
+   <img width="917" height="414" alt="image" src="https://github.com/user-attachments/assets/b82c63d3-458a-4996-8388-3fe7f16bea98" />
 
-    This will add an MCP Server to your `settings.json` file. It should look like this:
-    ![settings.json file](./assets/settings.png)
+1. 그리고 `Enter`를 누릅니다.
+1. MCP 서버 이름을 입력합니다. 여기서는 `JokesMCP`라고 입력합니다.
+1. Scope을 기본 값인 `global`으로 설정합니다.
+<img width="745" height="176" alt="image" src="https://github.com/user-attachments/assets/761ae1c1-81c2-4a91-9981-ed2d3df3014b" />
 
-1. Open `GitHub Copilot`
-1. Switch from `Ask` to `Agent`
-1. Make sure the `JokesMCP` server actions are selected when you select the tools icon:
+> Global은 VS Code 전체에서 사용할 수 있는 등록방법 입니다.
+> Workspace는 특정 워크스페이스(프로젝트)에서만 사용하는 등록방법 입니다.
 
-    ![Tools menu in GitHub Copilot](./assets/tools-menu.png)
+1. 1. 사용자 설정에서 MCP 서버 설정을 저장하려면 `User setting`을 선택하세요.
 
-1. Ask the following question:
+    이 작업은 방금 만든 MCP Server 정보를 `settings.json` 파일에 저장하는 작업입니다. 이러한 정보는 json 형태에 담겨 아래와 같이 보여집니다.
+    <img width="999" height="293" alt="image" src="https://github.com/user-attachments/assets/94950b37-4bc2-4922-9107-93528d2cd8c6" />
+
+1. `GitHub Copilot`을 엽니다.
+1. 모드를 `Ask`에서 `Agent`으로 변경합니다.
+1. 아래와 같이 우리가 만든 `JokesMCP` MCP Server가 잘 선택되어 있는지 확인합니다.
+
+    <img width="1208" height="998" alt="image" src="https://github.com/user-attachments/assets/01592e1c-aa84-4ff0-86ef-42b1a2e33ad0" />
+
+
+1. 그리고 다음과 같이 채팅창에 질문해 봅니다.
 
     ```text
     Get a chuck norris joke from the Dev category
     ```
 
-This should give you a response like this:
+    ```text
+    Get a chuck norris joke from the music category. 그리고 대답은 영어로도 보여주고, 한국어로도 보여줘.
+    ```
 
-![Screenshot of question to provide a joke from the dev category and the answer from GitHub Copilot](./assets/github-copilot-get-joke.png)
+그럼 다음과 같이 응답을 확인할 수 있습니다. 응답의 그룹은 테두리 색상으로 구분합니다.
+
+<img width="505" height="1044" alt="image" src="https://github.com/user-attachments/assets/be200e7c-1e4c-4ec1-b0d2-1eab5b33419b" />
 
 Now you have added the `JokesMCP` server to Visual Studio Code!
 

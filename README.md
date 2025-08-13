@@ -140,7 +140,7 @@ GitHub에 로그인하라는 메시지가 표시될 수 있습니다. 포트 포
 <img width="744" height="201" alt="image" src="https://github.com/user-attachments/assets/e304a624-c332-4828-89aa-1f4339519ed1" />
 
 
-### 🌎 Azure 클라우드 배포
+## 🌎 Azure 클라우드 배포
 
 > [!important]
 > 이전 [prerequisites](#️-prerequisites)에 설명된 내용 기준으로, the [Azure Developer CLI ](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd) 이 설치되어 있어야 컴퓨터에서 실행 가능합니다. 만약 설치가 되었는지 확인하려면, `azd version` 명령어를 참고하세요.
@@ -187,7 +187,7 @@ azd up
 {"jsonrpc":"2.0","error":{"code":-32000,"message":"Method not allowed."},"id":null}
 ```
 
-## 👨‍💻 Visual Studio Code/GitHub Copilot에서 Jokes MCP 서버 사용하기
+## 👨‍💻 Visual Studio Code/GitHub Copilot에서 Jokes MCP 서버을 위한 커스텀 커넥터 생성
 
 Jokes MCP 서버를 사용하려면 서버의 URL(devtunnel URL이나 배포한 Azure Container App이 될 수 있음)의 끝에 `/mcp` 부분을 추가하고 Visual Studio Code에서 MCP 서버로 추가해야 합니다.
 
@@ -241,106 +241,113 @@ Jokes MCP 서버를 사용하려면 서버의 URL(devtunnel URL이나 배포한 
 
 ## 👨‍💻 Microsoft Copilot Studio에서 Jokes MCP 서버 사용
 
-**Import the Connector**
-
 1. https://make.preview.powerapps.com/customconnectors 으로 이동합니다. (= 이때 우측 상단의 환경을 잘 확인하여, 원하는 곳으로 이동합니다)
 2. **+ New custom connector**를 클릭하고, `Import from GitHub`를 클릭합니다.
    <img width="1630" height="442" alt="image" src="https://github.com/user-attachments/assets/f1c19ece-ca4e-4c07-94d3-7fba8db046bf" />
 
-1. Select `Custom` as **Connector Type**
-1. Select `dev` as the **Branch**
-1. Select `MCP-Streamable-HTTP` as the **Connector**
-1. Select `Continue`
+1. 그리고 다음과 같이 선택하고 `Continue`를 누릅니다.
+- `Custom` as **Connector Type**
+- `dev` as the **Branch**
+- `MCP-Streamable-HTTP` as the **Connector**
+  
+  <img width="643" height="410" alt="image" src="https://github.com/user-attachments/assets/1e71e578-729f-4c44-a56d-a6d87b351df0" />
 
-    ![View of the import from GitHub section](./assets/import-from-github.png)
-
-1. Change the **Connector Name** to something appropriate, like for instance `Jokes MCP` 
-1. Change the **Description** to something appropriate
-1. Paste your root URL (for instance `something-3000.something.devtunnels.ms` or `something.azurecontainerapps.io`) in the **Host** field
-1. Select **Create connector** 
+1. **Connector Name** 이름을 적절하게 변경합니다. 여기서는 `Jokes MCP` 으로 변경합니다.
+1. **Description**를 적절하게 변경합니다. 여기서는 다음과 같이 입력합니다.
+   ```
+   이 MCP 서버는 카테고리, 또는 랜덤하게 유머를 제안해 주는 MCP Server입니다.
+   ```
+1. **Host** 필드에 만들었던 MCP Server의 메인 주소를 입력합니다.    
+   (예: `something-3000.something.devtunnels.ms` or `something.azurecontainerapps.io`) 
+1. **Create connector** 버튼을 누릅니다.
+  <img width="1110" height="914" alt="image" src="https://github.com/user-attachments/assets/ccd1aae2-aa53-41cb-8ad5-90137aeaa40a" />
 
 > [!WARNING]  
-> You may see a warning and an error upon creation – it should be resolved soon - but you can ignore it for now.
+> 생성 시 경고와 오류가 표시될 수 있습니다. 이 문제는 곧 해결될 것입니다. 하지만 지금은 무시해 주세요!
 
-11. Close the connector
+11. 커넥터 화면을 닫습니다. 
 
+## 🤖 Copilot Studio를 통한 에이전트 생성 및 MCP Server 연결
 
-**Create an agent and add the MCP server as a tool**
-
-1. Go to https://copilotstudio.preview.microsoft.com/
-1. Select the environment picker at the top right corner
-1. Select the right environment (the environment with the `Get new features early` toggle switched on)
-1. Select `Create` in the left navigation
-1. Select the blue `New agent` button
+1. https://copilotstudio.preview.microsoft.com/ 으로 이동합니다.
+1. 우측 상단 환경에서 적절한 환경을 선택합니다.
+1. 좌측 네비게이션바에서 에이전트 생성을 위해 `Create`를 누릅니다.
+1. 파란색  `New agent` 버튼을 누릅니다.
 
     ![New agent](./assets/newagent.png)
 
-1. Select the `Configure` tab on the left
+1.  탭 중 `Configure` 버튼을 눌러 아래 정보를 입력합니다.
 
     ![Configure](./assets/configure.png)
 
-1. Change the name to `Jokester`
-1. Add the following `Description`
+- Agent Name: `Jokester`
+- `Description`은 다음 정보를 붙여넣기 합니다.
 
     ```text
-    A humor-focused agent that delivers concise, engaging jokes only upon user request, adapting its style to match the user's tone and preferences. It remains in character, avoids repetition, and filters out offensive content to ensure a consistently appropriate and witty experience.
+    사용자 요청에 따라서만 간결하고 매력적인 농담을 제공하는 유머 중심 에이전트로, 사용자의 어조와 선호도에 맞춰 스타일을 조정합니다. 캐릭터의 특징을 살리고, 반복을 피하며, 불쾌한 콘텐츠를 걸러내 일관되고 재치 있는 경험을 보장합니다.
     ```
 
 1. Add the following `Instructions`
 
     ```text
-    You are a joke-telling assistant. Your sole purpose is to deliver appropriate, clever, and engaging jokes upon request. Follow these rules:
-    
-    * Respond only when the user asks for a joke or something related (e.g., "Tell me something funny").
-    * Match the tone and humor preference of the user based on their input—clean, dark, dry, pun-based, dad jokes, etc.
-    * Never break character or provide information unrelated to humor.
-    * Keep jokes concise and clearly formatted.
-    * Avoid offensive, discriminatory, or NSFW content.
-    * When unsure about humor preference, default to a clever and universally appropriate joke.
-    * Do not repeat jokes within the same session.
-    * Avoid explaining the joke unless explicitly asked.
-    * Be responsive, witty, and quick.
+    당신은 농담 도우미입니다. 당신의 유일한 목적은 요청에 따라 적절하고 재치 있고 매력적인 농담을 제공하는 것입니다. 다음 규칙을 따르세요.
+
+   * 사용자가 농담이나 관련 내용을 요청할 때만 응답하세요(예: "재미있는 것 좀 말해줘").
+   * 사용자의 입력 내용에 따라 어조와 유머 선호도를 맞춰주세요. 깔끔한 농담, 어두운 농담, 건조한 농담, 말장난 기반 농담, 아빠 농담 등.
+   * 등장인물의 대사를 끊거나 유머와 관련 없는 정보는 제공하지 마세요.
+   * 농담은 간결하고 명확한 형식을 유지하세요.
+   * 불쾌하거나 차별적이거나 NSFW(성인용 언어) 콘텐츠는 피하세요.
+   * 유머 선호도가 확실하지 않은 경우, 재치 있고 보편적으로 적합한 농담을 사용하세요.
+   * 같은 세션 내에서 농담을 반복하지 마세요.
+   * 명시적으로 요청하지 않는 한 농담에 대해 설명하지 마세요.
+   * 응답성이 좋고 재치 있으며 빠르게 답변하세요.
     ```
 
-1. Select `Continue` on the top right
+1. 우측 상단에 ... 버튼을 클릭 후 에이전트 언어를 **영어 -> 한국어**로 변경한 뒤 업데이트 버튼을 누릅니다.
+   <img width="1704" height="655" alt="image" src="https://github.com/user-attachments/assets/a97ef9d9-7343-4a34-90a2-7da2c31d4243" />
+
+1. 우측 상단의 `Continue` 버튼을 누릅니다.
 
     ![Click continue to create agent](./assets/continue.png)
 
-1. Enable Generative AI `Orchestration`
+1. Generative AI `Orchestration` 모드를 활성화 합니다.
 
     ![Turn on orchestration](./assets/turnonorchestration.png)
 
-1. Disable general knowledge in the `Knowledge` section
+1. 다음 경로로 들어가 general knowledge, 그리고 Web search 기능을 비활성화 한 뒤 저장합니다.
 
-    ![Turn off general knowledge](./assets/turnoffgeneralknowledge.png)
+    <img width="1660" height="792" alt="image" src="https://github.com/user-attachments/assets/16a21523-b5b7-4671-8db9-5787ab980904" />
+    <img width="1503" height="1101" alt="image" src="https://github.com/user-attachments/assets/33cd9c44-b914-49ec-99d8-65ee2ebd03b3" />
 
-1. Select `Tools` in the top menu
+
+
+1. 상단의 `Tools` 메뉴로 이동합니다.
  
     ![Tools](./assets/tools.png)
 
-1. Select `Add a tool`
+1. `Add a tool`를 클릭합니다.
 
     ![Add a tool](./assets/addatool.png)
 
-1. Select the `Model Context Protocol` tab to filter all the Model Context Protocol Servers (see number 1 in the screenshot below)
+1. 모든 MOdel Context Protocal Servers 필터링을 위해 `Model Context Protocol` 탭을 클릭합니다. (아래 이미지 중 1번 항목)
 
-1. Select the `Jokes MCP` server (see number 2 in the screenshot below)
+1. `Jokes MCP` 를 선택합니다. (아래 이미지 중 2번 항목)
 
     ![MCP](./assets/mcpsteps.png)
 
-1. Create a new connection by selecting the `Not connected` and **Create new Connection**
+1. 중앙에 `Not connected`가 보인다면, **Create new Connection**를 눌러줍니다.
 
     ![Action and connection](./assets/create-connection-action.png)
 
-1. Select `Create`
+1. 커넥션 생성을 위해 `Create` 버튼을 누릅니다.
 
     ![Create connection](./assets/create-connection-action-create.png)
 
-1. Select `Add to agent` to add the tool to the agent
+1.  `Add to agent`을 눌러 MCP Server 툴을 에이전트에 추가합니다.
 
     ![Add tool to agent](./assets/add-tool-to-agent.png)
 
-1. Select the `refresh icon` in the `Test your agent` pane
+1.  `Test your agent` 패널에 있는 `refresh icon` 버튼을 클릭합니다.
 
     ![Refresh testing pane](./assets/refreshtestingpane.png)
 
@@ -349,24 +356,28 @@ Jokes MCP 서버를 사용하려면 서버의 URL(devtunnel URL이나 배포한 
     ```text
     Can I get a Chuck Norris joke?
     ```
-  
-    This will show you message that additional permissions are required to run this action. This is because of the user authentication in the action wizard.
 
-1. Select `Connect`
+    이 작업을 실행하려면 추가 권한이 필요하다는 메시지가 표시됩니다. 이는 작업 마법사의 사용자 인증 때문입니다.
+
+1. 만약 아래 이미지와 같이 나온다면 `Connect`를, 그게 아니라면 빨간색 테두리 영역의 **연결 관리자 열기**를 누릅니다.
 
     ![Additional permissions](./assets/additionalpermissions.png)
-  
-    This will open a new window where you can manage your connections for this agent.
 
-1. Select `Connect` next to the `JokesMCP`
+   또는
+
+   <img width="545" height="435" alt="image" src="https://github.com/user-attachments/assets/4be854d9-7d9f-4529-8a76-f9294b1f8f5b" />
+
+    이렇게 하면 해당 에이전트에 대한 연결을 관리할 수 있는 새 창이 열립니다.
+
+1.  `JokesMCP` 옆에 있는 `Connect`를 누릅니다.
 
     ![Connect to JokesMCP](./assets/connect.png)
 
-1. Wait until the connection is created and select `Submit`
+1. 커넥션이 정상적으로 생성되었다고 나올 때 까지 기다렸다가, `Submit`을 누릅니다.
 
     ![Pick a connection](./assets/submitconnection.png)
 
-1. The connection should now be connected, so the status should be set to `Connected`
+1. 커넥션이 올바르게 연결됨을 확인해야 합니다. 올바르게 연결되었을 경우 상태는 `Connected`으로 나타납니다.
 
     ![Status connected](./assets/connected.png) 
 

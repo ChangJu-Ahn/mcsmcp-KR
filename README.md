@@ -237,14 +237,16 @@ Jokes MCP 서버를 사용하려면 서버의 URL(devtunnel URL이나 배포한 
 
 <img width="505" height="1044" alt="image" src="https://github.com/user-attachments/assets/be200e7c-1e4c-4ec1-b0d2-1eab5b33419b" />
 
-Now you have added the `JokesMCP` server to Visual Studio Code!
+이제 우리는 `JokesMCP` MCP Server를 만들고 비주얼 스튜디오 코드의 깃헙 코파일럿이 사용할 수 있도록 만들었네요! :)
 
-## 👨‍💻 Use the Jokes MCP Server in Microsoft Copilot Studio
+## 👨‍💻 Microsoft Copilot Studio에서 Jokes MCP 서버 사용
 
 **Import the Connector**
 
-1. Go to https://make.preview.powerapps.com/customconnectors (make sure you’re in the correct environment) and click **+ New custom connector**. 
-1. Select `Import from GitHub`
+1. https://make.preview.powerapps.com/customconnectors 으로 이동합니다. (= 이때 우측 상단의 환경을 잘 확인하여, 원하는 곳으로 이동합니다)
+2. **+ New custom connector**를 클릭하고, `Import from GitHub`를 클릭합니다.
+   <img width="1630" height="442" alt="image" src="https://github.com/user-attachments/assets/f1c19ece-ca4e-4c07-94d3-7fba8db046bf" />
+
 1. Select `Custom` as **Connector Type**
 1. Select `dev` as the **Branch**
 1. Select `MCP-Streamable-HTTP` as the **Connector**

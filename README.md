@@ -1,6 +1,7 @@
 # Microsoft Copilot Studio ❤️ MCP
 
-Microsoft Copilot Studio ❤️ MCP 랩에 오신 것을 환영합니다. 이 랩에서는 MCP 서버를 배포하는 방법과 Microsoft Copilot Studio에 추가하는 방법을 학습합니다.
+Microsoft Copilot Studio ❤️ MCP 랩에 오신 것을 환영합니다.    
+이 랩에서는 MCP 서버를 배포하는 방법과 Microsoft Copilot Studio에 추가하는 방법을 학습합니다.
 
 ## ❓ What is MCP?
 

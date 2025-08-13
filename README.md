@@ -108,7 +108,7 @@ GitHub에 로그인하라는 메시지가 표시될 수 있습니다. 포트 포
 {"jsonrpc":"2.0","error":{"code":-32000,"message":"Method not allowed."},"id":null}
 ```
 
-걱정하지 마세요. 이 오류 메시지는 걱정할 것이 전혀 없습니다! 이제부터 만들 예정이니까요! :)
+걱정하지 마세요. 이 오류 메시지는 걱정할 것이 전혀 없습니다! 이게 안 보이면 잘못 하신겁니다.
 
 <img width="744" height="201" alt="image" src="https://github.com/user-attachments/assets/e304a624-c332-4828-89aa-1f4339519ed1" />
 

@@ -1,4 +1,4 @@
-# Microsoft Copilot Studio ❤️ MCP
+<img width="180" height="23" alt="image" src="https://github.com/user-attachments/assets/6cdb0b6c-773a-4b14-93f0-8e53eabc13f4" /># Microsoft Copilot Studio ❤️ MCP
 
 Microsoft Copilot Studio ❤️ MCP 랩에 오신 것을 환영합니다. 이 랩에서는 MCP 서버를 배포하는 방법과 Microsoft Copilot Studio에 추가하는 방법을 학습합니다.
 
@@ -409,6 +409,37 @@ Jokes MCP 서버를 사용하려면 서버의 URL(devtunnel URL이나 배포한 
 
 그리고 이것이 Microsoft Copilot Studio에서 작동하는 Jokes MCP 서버였습니다.
 
+## 👋 Github Copilot도 잠깐 사용해 볼까요?
+
+1) VSC에서 깃헙 코파일럿을 실행합니다. 그리고 다음과 같이 에이전트 모드로 변경한 뒤 다음과 같이 요청해 봅니다.
+그럼 다음과 같이 소스코드를 제안해 주고, **Keep** 버튼을 눌러 에이전트가 추천해 준 코드를 반영합니다.
+
+```
+이 세상에서 최고의 개그맨은 누구야? 라는 질문에 "Changju Ahn!" 이라고 대답해 주는 Tool을 생성해 줘
+```
+<img width="1722" height="967" alt="image" src="https://github.com/user-attachments/assets/3181f67d-71b7-4893-a362-5f33c47b5c82" />
+
+2) 그리고 서버를 다음과 같은 방법으로 재시작합니다.
+
+```
+npm run build && npm run start
+```
+- npm run build: TypeScript 코드를 빌드합니다.   
+- npm run start: 서버를 실행합니다.
+
+3) MCP Inspector로 실제 Tool 추가가 잘 되었는지 확인합니다.
+   
+   <img width="1438" height="695" alt="image" src="https://github.com/user-attachments/assets/4aab706b-06ac-47e6-a7c8-71b05d4739c7" />
+
+4) MCP Inspector에서 확인이 되었다면, 최종적으로 다시 Azure Container Apps로 배포하기 위한 아래 명령어를 터미널에 입력합니다.
+   ```
+   azd up
+   ```
+   
+5) 변경된 소스코드가 정상적으로 Azure Container Apps로 배포 되었다면, 코파일럿 스튜디오에서 다시한번 확인합니다.
+   <img width="1626" height="1249" alt="image" src="https://github.com/user-attachments/assets/081ad2f0-d4db-482e-b713-75e0442cce81" />
+   <img width="1709" height="1372" alt="image" src="https://github.com/user-attachments/assets/e0ecdc99-94c1-49b1-a93d-178a59c84bb4" />
+   
 ## ❌ Azure 리소스 제거
 
 랩을 마친 후 Azure 리소스를 제거하려면 터미널에서 다음 명령을 실행하세요.

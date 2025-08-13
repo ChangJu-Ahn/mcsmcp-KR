@@ -74,6 +74,10 @@ MCP 서버는 커넥터 인프라를 활용해 엔터프라이즈 보안 및 거
    
    <img width="618" height="378" alt="image" src="https://github.com/user-attachments/assets/6f3f14a4-ea1a-4b41-8072-d52e9f3c4fc6" />
 
+5. 그리고 이 로컬 URL을 기반으로 Copilot Studio에서 MCP를 그대로 사용할 수 있습니다.   
+   활용 방법은 아래쪽에 Custom Connector를 만들 때 위에서 나온 URL을 입력하시면 됩니다. 이 개념을 기반으로 로컬에서 호스팅하는 프로세스를 생각할 수 있습니다.
+   <img width="1192" height="983" alt="image" src="https://github.com/user-attachments/assets/1efaafc7-89ee-4591-8cb3-1b609bdd904e" />
+
 ## 🏃‍♀️ Run the MCP Server Locally
 
 1. 터미널 창에서 `npm install` 를 입력합니다.

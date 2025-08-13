@@ -133,27 +133,45 @@ GitHub에 로그인하라는 메시지가 표시될 수 있습니다. 포트 포
 
 ### 🌎 Azure 클라우드 배포
 
-> [!IMPORTANT]
-> As listed in the [prerequisites](#️-prerequisites), the [Azure Developer CLI ](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd) needs to be installed on your machine for this part.
+> [!important]
+> 이전 [prerequisites](#️-prerequisites)에 설명된 내용 기준으로, the [Azure Developer CLI ](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd) 이 설치되어 있어야 컴퓨터에서 실행 가능합니다. 만약 설치가 되었는지 확인하려면, `azd version` 명령어를 참고하세요.
 
-Make sure to login to Azure Developer CLI if you haven't done that yet.
+<img width="697" height="279" alt="image" src="https://github.com/user-attachments/assets/ce4dad84-0253-459f-8c01-dfb172d400cd" />
+
+그리고 아직 Azure Developer CLI에 로그인하지 않았다면 꼭 로그인하세요.
 
 ```azurecli
 azd auth login
 ```
 
-> [!WARNING]  
-> After running `azd up`, you will have an MCP Server running on Azure that is publicly available. Ideally, you don't want that. Make sure to run `azd down` after finishing the lab to delete all the resources from your Azure subscription. Learn how to run `azd down` by going to [this section](#-remove-the-azure-resources). 
+<img width="650" height="231" alt="image" src="https://github.com/user-attachments/assets/a066fce7-b864-4b51-afab-4729390a652b" />
 
-Run the following command in the terminal:
+> [!WARNING]  
+> `azd up` 명령어를 실행하게 되면 Azure 위에서 동작하는 퍼블릭하게 동작하는 MCP Server가 배포됩니다. 이는 비용이 지속적으로 발생할 수 있으므로, 원하지 않을 경우 실습 후 `azd down` 명령어를 입력합니다. 이 명령어는 Azure 구독으로 배포된 리소스를 제거하는 명령입니다. `azd down` 관련한 자세한 내용은 [여기](#-remove-the-azure-resources)를 참고해 주세요. 
+
+다음 명령어를 터미널 창에서 실행합니다. 
 
 ```azurecli
 azd up
 ```
 
-For the unique environment name, enter `mcsmcplab` or something similar. Select the Azure Subscription to use and select a value for the location. After that, it will take a couple of minutes before the server has been deployed. When it's done - you should be able to go to the URL that's listed at the end and add `/mcp` to the end of that URL.
+이후 추가적으로 입력할 내용은 다음과 같습니다.
+- Unique environment name(Resource Group Nanme): `mcsmcplab`
+- Azure Subscription: 테넌트 내 구독이 여러가지라면, 사용하고자 하는 구독을 선택합니다. 한 개만 있다면 바로 선택합니다.
+- Location: Korea Central
+  
+<img width="836" height="247" alt="image" src="https://github.com/user-attachments/assets/87fceb5d-b366-42ea-99e0-cf6e4b76ceb8" />
 
-![Azd deploy server output](./assets/azd-deploy-server.png)
+명령어 실행 후 배포될 때까지 약간의 시간이 필요합니다. 배포가 완료된 뒤에 다음과 같은 URL을 확인할 수 있습니다. 그리고 해당 URL 뒤에 `/mcp`을 붙여 브라우저에서 직접 확인해 봅니다.
+
+<img width="844" height="262" alt="image" src="https://github.com/user-attachments/assets/9cac0119-63d0-44c9-8bb2-656ad3e6e762" />
+<img width="809" height="262" alt="image" src="https://github.com/user-attachments/assets/5a064113-f6ef-414c-8c31-5f858fc80782" />
+
+> 위 URL은 portal.azure.com으로 들어와서 배포된 Container Apps에서도 확인할 수 있습니다.
+
+<img width="1437" height="447" alt="image" src="https://github.com/user-attachments/assets/e36ade88-f391-4310-bd5f-40a9340cb241" />
+
+
 
 You should again see the following error:
 

@@ -351,7 +351,7 @@ Jokes MCP 서버를 사용하려면 서버의 URL(devtunnel URL이나 배포한 
 
     ![Refresh testing pane](./assets/refreshtestingpane.png)
 
-1. In the `Test your agent` pane send the following message:
+1.  `Test your agent` 패널에서, 다음과 같이 질문해 봅니다.
 
     ```text
     Can I get a Chuck Norris joke?
@@ -381,44 +381,42 @@ Jokes MCP 서버를 사용하려면 서버의 URL(devtunnel URL이나 배포한 
 
     ![Status connected](./assets/connected.png) 
 
-1. Close the manage your connections tab in your browser
+1. 연결 매니저 브라우저를 닫고, 다시 Jokester agent 화면으로 돌아갑니다.
 
-    Now you should be back in the Jokester agent screen.
+1. `Test your agent` 패널에 있는 `refresh icon` 버튼을 클릭합니다. 이때 엑티비티 맵을 보기 위해 다음 빨간색 테두리도 함께 클릭합니다.
 
-1. Select the `refresh icon` in the `Test your agent` pane
+    <img width="574" height="252" alt="image" src="https://github.com/user-attachments/assets/48a9fbd9-2879-4ea2-b1ce-0f28462661fd" />
 
-    ![Refresh testing pane](./assets/refreshtestingpane.png)
-
-1. In the `Test your agent` pane send the following message:
+1. `Test your agent` 패널 탭에서 다시 다음과 같이 질문해 봅니다.
 
     ```text
-    Can I get a Chuck Norris joke?
+    유머 카테고리 리스트는?
     ```
+   <img width="1582" height="1228" alt="image" src="https://github.com/user-attachments/assets/358afe07-ab40-43cf-81b1-116f5e2fde50" />
 
-    This will now show a Chuck Norris joke - instead of the additional permissions. If that's not the case - you probably have missed the [prerequisite](#️-prerequisites) that the environment needs to have the `get new features early` toggle on.
+   > 유머 카테고리 리스르를 달라고 했으니, 여러 개의 MCP Tool 중에 카테고리를 반환하는 Tool을 적절하게 선택합니다. 
 
-    ![Chuck Norris joke](./assets/chucknorrisjoke.png)
-
-1. In the `Test your agent` pane send the following message:
+1. `Test your agent` 패널 안에서 다시한번 질문해 봅니다.
 
     ```text
-    Can I get a Dad joke?
+    그럼 머니에 대한 유머를 보여줘
     ```
 
-    This will now show a Dad joke.
+   그럼 돈에 대한 유머를 보여줍니다. 이때 저는 **머니**라고 입력했지만, 이게 돈이고, 결국 **Money**로 변환되어 파라미터에 추가되어야 하는 걸 알아챕니다.
+   이후 파라미터는 money로 변경되어 제대로 호출되었고, 결과 값도 영어로 반환되었지만 프롬프트에 의해 한국어로 변환되어 보여집니다.
 
-    ![Dad joke](./assets/dadjoke.png)
+   <img width="1620" height="1222" alt="image" src="https://github.com/user-attachments/assets/62e0ec53-9f89-4997-bba2-b8644ffa5d13" />
 
-And that was the Jokes MCP Server working in Microsoft Copilot Studio.
+그리고 이것이 Microsoft Copilot Studio에서 작동하는 Jokes MCP 서버였습니다.
 
-## ❌ Remove the Azure resources
+## ❌ Azure 리소스 제거
 
-To remove the Azure resources after finishing the lab, run the following command in the terminal:
+랩을 마친 후 Azure 리소스를 제거하려면 터미널에서 다음 명령을 실행하세요.
 
 ```azurecli
 azd down
 ```
-This command will show you the resources that will be deleted and then ask you to confirm. Confirm with `y` and the resources will be deleted. This can take a couple of minutes, but at the end you will see a confirmation:
+이 명령은 삭제할 리소스를 표시한 후 확인을 요청합니다. `y`를 눌러 확인하면 리소스가 삭제됩니다. 몇 분 정도 걸릴 수 있지만, 마지막에 확인 메시지가 표시됩니다.
 
 ![resources deleted](./assets/azd-down-confirmation.png)
 

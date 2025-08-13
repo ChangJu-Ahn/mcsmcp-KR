@@ -449,6 +449,8 @@ azd down
 ```
 이 명령은 삭제할 리소스를 표시한 후 확인을 요청합니다. `y`를 눌러 확인하면 리소스가 삭제됩니다. 몇 분 정도 걸릴 수 있지만, 마지막에 확인 메시지가 표시됩니다.
 
+<img width="707" height="422" alt="image" src="https://github.com/user-attachments/assets/27e37538-4f12-4b85-8d14-8b1ab09832db" />
+
 ![resources deleted](./assets/azd-down-confirmation.png)
 
 ## 💡 Known issues and planned improvements

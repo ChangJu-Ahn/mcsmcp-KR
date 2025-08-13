@@ -109,27 +109,29 @@ MCP 서버는 커넥터 인프라를 활용해 엔터프라이즈 보안 및 거
 
    <img width="421" height="101" alt="image" src="https://github.com/user-attachments/assets/a7cbfb0d-8217-4aa6-8a6d-c2ea730d12eb" />
 
+1. 포트 번호로 `3000`을 입력하세요. (단, 위에서 표현된 포트번호와 동일해야 합니다)
+GitHub에 로그인하라는 메시지가 표시될 수 있습니다. 포트 포워딩 기능을 사용하려면 로그인이 필수이므로, 로그인해 주세요.
 
-    ![Image of VS Code where the PORTS tab is open and the green `Forward a Port` button is highlighted](./assets/vscode-terminal-ports-forward.png)
+<img width="1083" height="293" alt="image" src="https://github.com/user-attachments/assets/306fdd85-2fde-4055-a7cf-85f1e5270e5d" />
 
-1. Enter `3000` as the port number (this should be the same as the port number you see when you ran the command in step 5). You might be prompted to sign in to GitHub, if so please do this, since this is required to use the port forwarding feature.
-1. Right click on the row you just added and select `Port visibility` > `Public` to make the server publicly available
-1. Ctrl + click on the `Forwarded address`, which should be something like: `https://something-3000.something.devtunnels.ms`
-1. Select `Copy` on the following pop-up to copy the URL
+1. 방금 추가한 행을 마우스 오른쪽 버튼으로 클릭하고, `Port visibility` > `Public`를 선택하여 서버를 공개적으로 사용할 수 있도록 합니다.
+1. 다음 팝업에서 `Copy`를 선택하여 URL을 복사합니다.
 
     ![View of the PORTS setup with highlighted the port, the forwarded address and the visibility](./assets/vscode-terminal-ports-setup.png) 
 
-1. Open to the browser of your choice and paste the URL in the address bar, type `/mcp` behind it and hit enter
-
-If all went well, you will see the following error message:
+1. 원하는 브라우저를 열고 주소창에 URL을 붙여넣고, 뒤에 `/mcp`를 입력한 후 Enter 키를 누르세요.    
+   모든 과정이 정상적으로 진행되었다면 다음과 같은 오류 메시지가 표시됩니다.
 
 ```json
 {"jsonrpc":"2.0","error":{"code":-32000,"message":"Method not allowed."},"id":null}
 ```
 
-Don't worry - this error message is nothing to be worried about!
+걱정하지 마세요. 이 오류 메시지는 걱정할 것이 전혀 없습니다! 이제부터 만들 예정이니까요! :)
 
-### 🌎 Deploy to Azure
+<img width="744" height="201" alt="image" src="https://github.com/user-attachments/assets/e304a624-c332-4828-89aa-1f4339519ed1" />
+
+
+### 🌎 Azure 클라우드 배포
 
 > [!IMPORTANT]
 > As listed in the [prerequisites](#️-prerequisites), the [Azure Developer CLI ](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd) needs to be installed on your machine for this part.

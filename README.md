@@ -52,37 +52,45 @@ MCP 서버는 커넥터 인프라를 활용해 엔터프라이즈 보안 및 거
 
 ## ➕ 템플릿 기반의 신규 깃럽 리포 생성하기
 
-1. https://github.com/microsoft/mcsmcp 깃헙 리포 접속
-1. `Use this template` 선택
+1. https://github.com/microsoft/mcsmcp 깃헙 리포 접속합니다.
+1. `Use this template` 선택합니다.
    <img width="1710" height="516" alt="image" src="https://github.com/user-attachments/assets/35c54192-462b-4feb-b199-d586963b631f" />
 
-3. `Create a new repository` 선택
+3. `Create a new repository` 선택합니다.
 
     <img width="357" height="237" alt="image" src="https://github.com/user-attachments/assets/b614bb38-b73e-441d-9e0b-172addb1b255" />
 
 
-1. 알맞은 `Owner`를 선택(보통은 다음과 같이 본인으로 지정)
+1. 알맞은 `Owner`를 선택합니다. (보통은 다음과 같이 본인으로 지정)
    <img width="806" height="275" alt="image" src="https://github.com/user-attachments/assets/27800d87-c2ee-4e44-ac59-23ac88cf703a" />
 
-1. `Repository name`을 입력. (여기서는 mcp-copilotstudio로 입력)
-1. 필요하다면 `Description` 항목에 비고를 입력
-1. `Private`을 선택
-1.  `Create repository` 선택
+1. `Repository name`을 입력합니다. 여기서는 **mcsmcp-kr** 입력합니다.
+1. 필요하다면 `Description` 항목에 비고를 입력합니다.
+1. `Private`을 선택합니다.
+1.  `Create repository` 선택합니다.
    
     이 작업은 시간이 조금 걸립니다. 완료된 이후에 새롭게 생성된 리포지토리로 redirect 됩니다.
 
 ## ⚖️ 선택: 서버를 로컬로 실행하거나 Azure에 배포
 
 이제는 선택할 수 있습니다! :) 서버를 로컬로 동작시키거나, Azure에 배포할 수 있습니다.
-
 다만, 두 가지 모두에 대해 몇 가지 단계를 거쳐야 합니다.
 
-1. Clone this repository by running the following command (replace `{account}` by your own GitHub account name): 
+1. 아래 명령어를 기반으로 현재 깃헙 리포지토리를 클론합니다. ( `{account}`를 사용자의 깃헙 계정 이름으로 변경): 
 
-    `git clone https://github.com/{account}/mcsmcp.git`
+`git clone https://github.com/{account}/mcsmcp-kr.git`
 
-1. Open Visual Studio Code and open the cloned folder
-1. Open the terminal and navigate to the cloned folder
+> 예시: 저는 git clone https://github.com/ChangJu-Ahn/mcsmcp-KR으로 입력했습니다.
+
+<img width="1039" height="383" alt="image" src="https://github.com/user-attachments/assets/946f336b-6f83-461a-9039-f2e6f5bbb68d" />
+
+2. 비주얼 스튜디오 코드를 실행하고, 리포지토리를 클론해 둔 폴더경로를 `open` 합니다.
+   
+   <img width="378" height="379" alt="image" src="https://github.com/user-attachments/assets/b4f7a583-e0c6-4763-8564-1519e09b88b3" />
+   
+4. 터미널을 열고, 클론된 폴더 경로로 이동합니다.
+   
+   <img width="618" height="378" alt="image" src="https://github.com/user-attachments/assets/6f3f14a4-ea1a-4b41-8072-d52e9f3c4fc6" />
 
 ### 🏃‍♀️ Run the MCP Server Locally
 

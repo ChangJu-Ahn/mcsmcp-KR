@@ -20,12 +20,10 @@ AI 모델과 다양한 데이터 소스 또는 도구를 표준화된 방식으�
 예를 들어, Copilot Studio에서 외부 API나 지식 서버를 직접 통합하고 싶을 때 MCP가 적합합니다.
 MCP는 Model Context Protocol을 기반으로 하며, LLM이 컨텍스트를 이해하고 활용할 수 있도록 돕습니다.
 
-
 ✅ 커넥터는 언제 사용하나요?
 
 Power Platform에서 기존의 **데이터 소스(예: Dynamics 365, SharePoint, SQL 등)**와 연결할 때 사용합니다.
 커넥터는 비즈니스 애플리케이션 통합에 특화되어 있으며, 데이터 작업과 워크플로우 자동화에 강점이 있습니다.
-
 
 ✅ MCP가 커넥터를 대체하나요?
 
@@ -38,6 +36,17 @@ MCP 서버는 커넥터 인프라를 활용해 엔터프라이즈 보안 및 거
 - Custom Connector 보호: https://learn.microsoft.com/connectors/custom-connectors/#2-secure-your-api
 
 따라서 **MCP + 커넥터** = 더 강력한 통합입니다.
+
+## ⏳ 시작하기 전에, MCP에서 어떤 정보를 주는지 알고 갑시다!
+
+이 MCP는 Model Context Protocol(MCP) SDK를 활용해, 다양한 농담(Chuck Norris, Dad joke 등)을 제공합니다.
+이 정보들은 아래 API 기반으로 응답하며, 아래 API가 아닌 기업의 레거시, Database, other APIs를 연결할 수 있다고 볼 수 있습니다.
+
+- https://api.chucknorris.io/jokes/random
+- https://api.chucknorris.io/jokes/random?category=${params.category}
+- https://api.chucknorris.io/jokes/categories
+- https://icanhazdadjoke.com/
+
 
 ## ⚙️ Prerequisites
 
@@ -92,7 +101,7 @@ MCP 서버는 커넥터 인프라를 활용해 엔터프라이즈 보안 및 거
    
    <img width="618" height="378" alt="image" src="https://github.com/user-attachments/assets/6f3f14a4-ea1a-4b41-8072-d52e9f3c4fc6" />
 
-### 🏃‍♀️ Run the MCP Server Locally
+## 🏃‍♀️ Run the MCP Server Locally
 
 1. 터미널 창에서 `npm install` 를 입력합니다.
 1. 그리고 `npm run build && npm run start` 를 입력합니다.
@@ -147,7 +156,8 @@ azd auth login
 <img width="650" height="231" alt="image" src="https://github.com/user-attachments/assets/a066fce7-b864-4b51-afab-4729390a652b" />
 
 > [!WARNING]  
-> `azd up` 명령어를 실행하게 되면 Azure 위에서 동작하는 퍼블릭하게 동작하는 MCP Server가 배포됩니다. 이는 비용이 지속적으로 발생할 수 있으므로, 원하지 않을 경우 실습 후 `azd down` 명령어를 입력합니다. 이 명령어는 Azure 구독으로 배포된 리소스를 제거하는 명령입니다. `azd down` 관련한 자세한 내용은 [여기](#-remove-the-azure-resources)를 참고해 주세요. 
+> `azd up` 명령어를 실행하게 되면 Azure 위에서 동작하는 퍼블릭하게 동작하는 MCP Server가 배포됩니다. 이는 비용이 지속적으로 발생할 수 있으므로, 원하지 않을 경우 실습 후 `azd down` 명령어를 입력합니다. 이 명령어는 Azure 구독으로 배포된 리소스를 제거하는 명령입니다. `azd down` 관련한 자세한 내용은 [여기](#-remove-the-azure-resources)를 참고해 주세요.
+> ```azd up```를 입력하면, Docker를 통해 이미지를 생성 후 Container Apps를 Azure 위에 올리게 됩니다. 그러므로 **Docker Desktop**는 꼭 실행중 이여야 합니다.
 
 다음 명령어를 터미널 창에서 실행합니다. 
 
@@ -171,9 +181,7 @@ azd up
 
 <img width="1437" height="447" alt="image" src="https://github.com/user-attachments/assets/e36ade88-f391-4310-bd5f-40a9340cb241" />
 
-
-
-You should again see the following error:
+정상적으로 실행되었다면, 다시한번 아래와 같은 오류 메시지를 볼 수 있습니다. (현재는 오류 메시지가 나오는 게 맞습니다)
 
 ```json
 {"jsonrpc":"2.0","error":{"code":-32000,"message":"Method not allowed."},"id":null}
@@ -183,9 +191,15 @@ You should again see the following error:
 
 Jokes MCP 서버를 사용하려면 서버의 URL(devtunnel URL이나 배포한 Azure Container App이 될 수 있음)의 끝에 `/mcp` 부분을 추가하고 Visual Studio Code에서 MCP 서버로 추가해야 합니다.
 
-1. Press either `ctrl` + `shift` + `P` (Windows/Linux) or `cmd` + `shift` + `P` (Mac) and type `MCP`
-1. Select `MCP: Add Server...`
-1. Select `HTTP (HTTP or Server-Sent Events)`
+1. 다음 두 가지 중 한 가지를 진행하면 상단의 Search bar가 동작합니다.
+   - `ctrl` + `shift` + `P` (Windows/Linux)
+   - 또는 `cmd` + `shift` + `P` (Mac) and type `MCP`
+1.  `MCP: Add Server...`를 선택합니다. 이전에 선택한 적이 있다면 최상위에 있지만, 처음이라면 아래쪽에 위치할 수 있습니다.
+   <img width="754" height="365" alt="image" src="https://github.com/user-attachments/assets/f4a3e3b1-d020-4f3c-a022-74ac301015a6" />
+
+1. `HTTP (HTTP or Server-Sent Events)`를 선택합니다.
+   <img width="726" height="217" alt="image" src="https://github.com/user-attachments/assets/4463cda3-86ef-41d8-86a4-4780a7717d3d" />
+
 1. Paste the URL of your server in the input box (make sure `/mcp` in the end is included)
 1. Press `Enter`
 1. Enter a name for the server, for instance `JokesMCP`

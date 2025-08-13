@@ -55,35 +55,7 @@ MCP 서버는 커넥터 인프라를 활용해 엔터프라이즈 보안 및 거
 - Node v22 (ideally installed via [nvm for Windows](https://github.com/coreybutler/nvm-windows) or [nvm](https://github.com/nvm-sh/nvm))
 - Git installed ([link](https://git-scm.com/downloads))
 - Docker installed ([link](http://aka.ms/azure-dev/docker-install))
-- Azure Developer CLI installed ([link](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd))
-- Azure Subscription (with payment method added)
-- GitHub account
-- Copilot Studio trial or developer account
-
-## ➕ 템플릿 기반의 신규 깃럽 리포 생성하기
-
-1. https://github.com/microsoft/mcsmcp 깃헙 리포 접속합니다.
-1. `Use this template` 선택합니다.
-   <img width="1710" height="516" alt="image" src="https://github.com/user-attachments/assets/35c54192-462b-4feb-b199-d586963b631f" />
-
-3. `Create a new repository` 선택합니다.
-
-    <img width="357" height="237" alt="image" src="https://github.com/user-attachments/assets/b614bb38-b73e-441d-9e0b-172addb1b255" />
-
-
-1. 알맞은 `Owner`를 선택합니다. (보통은 다음과 같이 본인으로 지정)
-   <img width="806" height="275" alt="image" src="https://github.com/user-attachments/assets/27800d87-c2ee-4e44-ac59-23ac88cf703a" />
-
-1. `Repository name`을 입력합니다. 여기서는 **mcsmcp-kr** 입력합니다.
-1. 필요하다면 `Description` 항목에 비고를 입력합니다.
-1. `Private`을 선택합니다.
-1.  `Create repository` 선택합니다.
-   
-    이 작업은 시간이 조금 걸립니다. 완료된 이후에 새롭게 생성된 리포지토리로 redirect 됩니다.
-
-## ⚖️ 선택: 서버를 로컬로 실행하거나 Azure에 배포
-
-이제는 선택할 수 있습니다! :) 서버를 로컬로 동작시키거나, Azure에 배포할 수 있습니다.
+- Azure Developer CLI installed ([link](https://learn.m에 배포할 수 있습니다.
 다만, 두 가지 모두에 대해 몇 가지 단계를 거쳐야 합니다.
 
 1. 아래 명령어를 기반으로 현재 깃헙 리포지토리를 클론합니다. ( `{account}`를 사용자의 깃헙 계정 이름으로 변경)

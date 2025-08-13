@@ -68,13 +68,14 @@ MCP 서버는 커넥터 인프라를 활용해 엔터프라이즈 보안 및 거
 1. 필요하다면 `Description` 항목에 비고를 입력
 1. `Private`을 선택
 1.  `Create repository` 선택
+   
     이 작업은 시간이 조금 걸립니다. 완료된 이후에 새롭게 생성된 리포지토리로 redirect 됩니다.
 
-## ⚖️ Choice: Run the server locally or deploy to Azure
+## ⚖️ 선택: 서버를 로컬로 실행하거나 Azure에 배포
 
-Now you have a choice! You either run the server locally - or you can deploy it to Azure.
+이제는 선택할 수 있습니다! :) 서버를 로컬로 동작시키거나, Azure에 배포할 수 있습니다.
 
-There are a couple of steps that you need to do for both:
+다만, 두 가지 모두에 대해 몇 가지 단계를 거쳐야 합니다.
 
 1. Clone this repository by running the following command (replace `{account}` by your own GitHub account name): 
 

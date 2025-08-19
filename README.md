@@ -55,8 +55,30 @@ MCP 서버는 커넥터 인프라를 활용해 엔터프라이즈 보안 및 거
 - Node v22 (ideally installed via [nvm for Windows](https://github.com/coreybutler/nvm-windows) or [nvm](https://github.com/nvm-sh/nvm))
 - Git installed ([link](https://git-scm.com/downloads))
 - Docker installed ([link](http://aka.ms/azure-dev/docker-install))
-- Azure Developer CLI installed ([link](https://learn.m에 배포할 수 있습니다.
-다만, 두 가지 모두에 대해 몇 가지 단계를 거쳐야 합니다.
+- Azure Developer CLI installed ([link](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd))
+- Azure Subscription (with payment method added)
+- GitHub account
+- Copilot Studio trial or developer account
+
+## ➕ 템플릿을 기반으로 새로운 GitHub 저장소를 만듭니다.
+
+1. `Use this template` 선택합니다.
+1. `Create a new repository` 선택합니다.
+
+    ![](./assets/usetemplate.png)
+
+1. 우측에 있는 `Owner`를 클릭합니다. (이미 선택되어 있다면, 따로 변경하지 않습니다)
+1. 적절한 이름을 입력합니다. `Repository name`
+1. 필요하다면 `Description`에다가 설명을 입력합니다. 
+1. `Private`을 선택하여 개인적으로 사용할 수있도록 합니다.
+1. 마지막으로 `Create repository`를 이용하여 리포를 생성합니다.
+
+    이 작업은 시간이 조금 걸릴 수 있습니다. 작업이 완료되면, 완료된 리포지토리로 리다이렉트 됩니다. 
+
+## ⚖️ 선택하시죠! : 서버를 로컬로 실행하거나 Azure에 배포합니다.
+
+이제 선택의 여지가 있습니다! 서버를 로컬에서 실행하거나 Azure에 배포할 수 있습니다.
+두 가지 모두 몇 가지 단계를 거쳐야 합니다.
 
 1. 아래 명령어를 기반으로 현재 깃헙 리포지토리를 클론합니다. ( `{account}`를 사용자의 깃헙 계정 이름으로 변경)
 

@@ -71,7 +71,7 @@ MCP 서버는 커넥터 인프라를 활용해 엔터프라이즈 보안 및 거
     ![](./assets/usetemplate.png)
 
 1. 우측에 있는 `Owner`를 클릭합니다. (이미 선택되어 있다면, 따로 변경하지 않습니다)
-1. 적절한 이름을 입력합니다. `Repository name`
+1. `Repository name` 항목에 적절한 이름을 입력합니다. 여기서는 **mcsmcp-kr** 라고 입력합니다.
 1. 필요하다면 `Description`에다가 설명을 입력합니다. 
 1. `Private`을 선택하여 개인적으로 사용할 수있도록 합니다.
 1. 마지막으로 `Create repository`를 이용하여 리포를 생성합니다.

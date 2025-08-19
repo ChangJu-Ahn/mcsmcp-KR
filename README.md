@@ -62,7 +62,10 @@ MCP 서버는 커넥터 인프라를 활용해 엔터프라이즈 보안 및 거
 
 ## ➕ 템플릿을 기반으로 새로운 GitHub 저장소를 만듭니다.
 
-1. `Use this template` 선택합니다.
+1. 원본 리포지토리인 https://github.com/microsoft/mcsmcp 으로 이동합니다.
+    > 이 페이지는 또한, 위 페이지를 기반으로 만들어진 페이지입니다. 
+ 
+1. 우측 상단에 `Use this template` 선택합니다.
 1. `Create a new repository` 선택합니다.
 
     ![](./assets/usetemplate.png)
